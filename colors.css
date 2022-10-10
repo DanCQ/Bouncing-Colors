@@ -1,0 +1,85 @@
+/* CSS comment */
+
+body {
+    background-color:black;
+    height:100%;
+    margin:0;
+    overflow:hidden;
+    width:100%
+}
+
+#first {
+    position:absolute;
+    top:45px;
+    left:45px;
+}
+
+#second {
+    position:absolute;
+    top:130px;
+    left:175px;    
+}
+
+#third {
+    position:absolute;
+    bottom:45px;
+    right:45px
+}
+
+main {
+    align-items:center;
+    background-color:black;
+    min-height:100vh;
+    min-width:100vw;
+    display:flex;
+    justify-content:center;
+}
+
+.sign {
+    background-color:black;
+    border-bottom: 0;
+    border-color: #151b54;
+    border-radius: 15px;
+    border-style: solid;
+    box-shadow: 0px 0px 3px 3px #250517;
+    color: steelblue;
+    font-family: "Lobster";
+    font-size: 30px;
+    min-height:300px;
+    min-width: 400px;
+    position:absolute;
+}
+
+.sign:hover {
+    border-color: #2b3856;
+    box-shadow: 0px 0px 5px 5px #7e587e;
+    color: cyan;
+    text-shadow: 3px 3px 3px #6a287e;
+}
+
+
+@media (max-width: 550px) {
+
+    #first {
+        position:absolute;
+        top:25px;
+        left:25px;
+    }
+    
+    #second {
+        position:absolute;
+        top:80px;
+        left:85px;    
+    }
+    
+    #third {
+        position:absolute;
+        bottom:25px;
+        right:25px
+    }
+
+    .sign {
+        min-width:200px;
+        min-height:200px;
+    }
+}
