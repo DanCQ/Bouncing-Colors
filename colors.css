@@ -8,6 +8,22 @@ body {
     width:100%
 }
 
+.contact {
+    font-family: "zapfino", "luminari", "Academy Engraved Let";
+    position:absolute;
+    bottom:10px;
+}
+
+.contact a {
+    color:transparent;
+    text-decoration: none;
+}
+  
+.contact a:hover {
+    color: black;
+    text-shadow: 0px 0px 2px lightsteelblue;
+}
+
 #first {
     position:absolute;
     top:45px;
