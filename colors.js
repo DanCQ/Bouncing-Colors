@@ -111,15 +111,16 @@ function background () {
     };
     //advances array count on mouseout
     window.onmouseout = function() {
-        body.style.backgroundColor = "";
+        body.style.backgroundColor = colorArray[index];
+        setTimeout(function() { index++ }, 500);
+        reset();
     };
     //advances array count on mouseover
     window.onmouseover = function () {
         body.style.backgroundColor = colorArray[index];
-        setTimeout(function(){ index++ }, 475);
+        setTimeout(function() { index++ }, 500);
         reset();
     };
-
 }
 
 //runs function after html document loads
