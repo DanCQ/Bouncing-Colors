@@ -47,7 +47,7 @@ function bouncy() {
         }
     }
     
-    setInterval(flashColors, 2000); //runs funtion every 2 seconds
+    setInterval(flashColors, 2500); //runs funtion every 2.5 seconds
 
     function on(name) {
         name.style.color = colorArray[index];
