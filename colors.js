@@ -1,3 +1,7 @@
+let first = document.getElementById("first");
+let second = document.getElementById("second");
+let third = document.getElementById("third");
+
 // 141 colors
 const colorArray = [
     "aliceblue", "antiquewhite", "aqua", "aquamarine", "azure", 
@@ -34,11 +38,8 @@ function randomRange(min, max) {
 
 //flashes color for words in sequential order
 function bouncy() {
-    var first = document.getElementById("first");
-    var second = document.getElementById("second");
-    var third = document.getElementById("third");
 
-    var index = randomRange(0, 141); //starts function with a random color in the array
+    let index = randomRange(0, 141); //starts function with a random color in the array
 
     //resets index if array max is reached
     function reset () {
@@ -86,22 +87,27 @@ function bouncy() {
 //cycle background color
 function background () {
     
-    var body = document.querySelector(".main");
-    var index = randomRange(0, 141); //starts function with a random color in the array
+    let body = document.querySelector(".main");
+    let index = randomRange(0, 141); //starts function with a random color in the array
 
     //resets index if array max is reached
     function reset () {
         if (index >= colorArray.length) {
             index = 0;
         }
+        third.innerHTML = colorArray[index];
     }
     //advances background color array
     function color () {
+        first.innerHTML = colorArray[index];
         body.style.backgroundColor = colorArray[index];
         index++;
         reset();
+        
     }
-    setInterval(function () { color() }, 3000); //automatically changes color every 3 seconds
+    setInterval(function () { color() }, 5000); //automatically changes color every 5 seconds
+    
+    setTimeout(function() { second.innerHTML = "next" }, 5000); 
 
     //advances array count on window click
     window.onclick = function () {
