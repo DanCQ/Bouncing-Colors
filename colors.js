@@ -43,7 +43,7 @@ function bouncy() {
 
     //resets index if array max is reached
     function reset () {
-        if (index >= colorArray.length) {
+        if (index > colorArray.length) {
             index = 0;
         }
     }
@@ -92,7 +92,7 @@ function background () {
 
     //resets index if array max is reached
     function reset () {
-        if (index >= colorArray.length) {
+        if (index > colorArray.length) {
             index = 0;
         }
         third.innerHTML = colorArray[index];
