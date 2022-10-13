@@ -37,7 +37,7 @@ function randomRange(min, max) {
 
 
 //flashes color for words in sequential order
-function bouncy() {
+function flashingWords() {
 
     let index = randomRange(0, 141); //starts function with a random color in the array
 
@@ -89,11 +89,12 @@ function backgroundColors () {
     
     let body = document.querySelector(".main");
     let center = document.querySelector(".center");
-    let index = randomRange(0, 141); //starts function with a random color in the array
+    let index = 65; //randomRange(0, 141); //starts function with a random color in the array
+    let play;
 
-    //resets index if array max is reached
+    //resets index if array max is reached ( >= prevents undefined from being displayed )
     function reset () {
-        if (index > colorArray.length) {
+        if (index >= colorArray.length) {
             index = 0;
         }
         
@@ -106,36 +107,28 @@ function backgroundColors () {
         reset();
         third.innerHTML = colorArray[index];
         center.style.backgroundColor = colorArray[index];
-        
-        
     }
-    setInterval(function () { color() }, 5000); //automatically changes color every 5 seconds
+    play = setInterval(function () { color() }, 5000); //automatically changes color every 5 seconds
     
-    setTimeout(function() { second.innerHTML = "next" }, 5000); 
+    setTimeout(function() { second.innerHTML = "pause" }, 5000); 
+    
+    
+    second.onclick = function() {
 
-    //advances array count on window click
-    window.onclick = function () {
-        body.style.backgroundColor = colorArray[index];
-        index++;
-        reset();
-    };
-    //advances array count on mouseout
-    window.onmouseout = function() {
-        body.style.backgroundColor = colorArray[index];
-        setTimeout(function() { index++ }, 500);
-        reset();
-    };
-    //advances array count on mouseover
-    window.onmouseover = function () {
-        body.style.backgroundColor = colorArray[index];
-        setTimeout(function() { index++ }, 500);
-        reset();
-    };
+        if (second.innerHTML == "pause") {
+            clearInterval(play);
+            second.innerHTML = "play";
+        } else if (second.innerHTML == "play") {
+            color();
+            second.innerHTML = "pause";
+            play = setInterval(function () { color() }, 5000);
+        }
+    }
 }
 
 //runs function after html document loads
 window.onload = function() {
 
     backgroundColors();
-    bouncy();
+    flashingWords();
 }
