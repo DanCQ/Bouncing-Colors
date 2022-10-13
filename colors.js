@@ -47,8 +47,6 @@ function flashingWords() {
             index = 0;
         }
     }
-    
-    setInterval(flashColors, 2500); //runs funtion every 2.5 seconds
 
     function on(name) {
         name.style.color = colorArray[index];
@@ -56,10 +54,12 @@ function flashingWords() {
         index++;
         reset();
     }
+
     function off(name) {
         name.style.color = "";
         name.style.textShadow = "";
     }
+
 
     function flashColors() {
         on(first); //starts
@@ -81,6 +81,8 @@ function flashingWords() {
             },1000); //stops
         }, 1500); //starts
     }
+
+    setInterval(flashColors, 2500); //runs funtion every 2.5 seconds
 }
 
 
@@ -90,14 +92,14 @@ function backgroundColors () {
     let body = document.querySelector(".main");
     let center = document.querySelector(".center");
     let index = randomRange(0, 141); //starts function with a random color in the array
-    let play;
 
-    //resets index if array max is reached ( >= prevents undefined from being displayed )
-    function reset () {
-        if (index >= colorArray.length) {
-            index = 0;
-        }
-    }
+    let play = setInterval( 
+        function () { 
+            color() 
+    }, 5000); //automatically changes color every 5 seconds
+
+    setTimeout(function() { second.innerHTML = "pause" }, 5000); 
+
     
     //advances background color array
     function color () {
@@ -105,25 +107,32 @@ function backgroundColors () {
         body.style.backgroundColor = colorArray[index];
         index++;
         reset();
+
         third.innerHTML = colorArray[index];
         center.style.backgroundColor = colorArray[index];
     }
-    play = setInterval(function () { color() }, 5000); //automatically changes color every 5 seconds
     
-    setTimeout(function() { second.innerHTML = "pause" }, 5000); 
-    
-    
+    //resets index if array max is reached ( >= prevents undefined from being displayed )
+    function reset () {
+        if (index >= colorArray.length) {
+            index = 0;
+        }
+    }
+
+
     second.onclick = function() {
 
         if (second.innerHTML == "pause") {
             clearInterval(play);
             second.innerHTML = "play";
+
         } else if (second.innerHTML == "play") {
             color();
             second.innerHTML = "pause";
             play = setInterval(function () { color() }, 5000);
         }
     }
+
 }
 
 //runs function after html document loads
