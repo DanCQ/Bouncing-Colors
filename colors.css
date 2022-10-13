@@ -8,6 +8,32 @@ body {
     width:100%
 }
 
+.center {
+    align-items: center;
+    background-color:white;
+    border-bottom: 0;
+    border-color: #151b54;
+    border-radius: 15px;
+    border-style: solid;
+    box-shadow: 0px 0px 3px 3px #250517;
+    color: black;
+    display:flex;
+    font-family: "herculanum", "papyrus", "marker felt", "comic sans ms";
+    font-size: 30px;
+    font-weight:bolder;
+    justify-content: center;
+    min-height:300px;
+    min-width: 450px;
+    position:absolute;
+}
+
+.center:hover {
+    border-color: #2b3856;
+    box-shadow: 0px 0px 5px 5px #7e587e;
+    color: white;
+    text-shadow: 3px 3px 3px #6a287e;
+}
+
 .contact {
     font-family: "zapfino", "luminari", "Academy Engraved Let";
     position:absolute;
@@ -43,32 +69,6 @@ main {
     position:absolute;
 }
 
-.center {
-    align-items: center;
-    background-color:white;
-    border-bottom: 0;
-    border-color: #151b54;
-    border-radius: 15px;
-    border-style: solid;
-    box-shadow: 0px 0px 3px 3px #250517;
-    color: black;
-    display:flex;
-    font-family: "herculanum", "papyrus", "marker felt", "comic sans ms";
-    font-size: 30px;
-    font-weight:bolder;
-    justify-content: center;
-    min-height:300px;
-    min-width: 450px;
-    position:absolute;
-}
-
-.center:hover {
-    border-color: #2b3856;
-    box-shadow: 0px 0px 5px 5px #7e587e;
-    color: white;
-    text-shadow: 3px 3px 3px #6a287e;
-}
-
 #third {
     position:absolute;
     bottom:45px;
@@ -78,6 +78,11 @@ main {
 
 @media (max-width: 550px) {
 
+    .center {
+        min-width:365px;
+        min-height:250px;
+    }
+
     #first {
         position:absolute;
         top:15%;
@@ -86,11 +91,6 @@ main {
     
     #second {
         position:absolute;
-    }
-    
-    .center {
-        min-width:365px;
-        min-height:250px;
     }
     
     #third {
