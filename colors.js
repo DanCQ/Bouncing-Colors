@@ -89,7 +89,7 @@ function backgroundColors () {
     
     let body = document.querySelector(".main");
     let center = document.querySelector(".center");
-    let index = 65; //randomRange(0, 141); //starts function with a random color in the array
+    let index = randomRange(0, 141); //starts function with a random color in the array
     let play;
 
     //resets index if array max is reached ( >= prevents undefined from being displayed )
@@ -97,8 +97,8 @@ function backgroundColors () {
         if (index >= colorArray.length) {
             index = 0;
         }
-        
     }
+    
     //advances background color array
     function color () {
         first.innerHTML = colorArray[index];
