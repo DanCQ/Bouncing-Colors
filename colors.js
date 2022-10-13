@@ -85,9 +85,10 @@ function bouncy() {
 
 
 //cycle background color
-function background () {
+function backgroundColors () {
     
     let body = document.querySelector(".main");
+    let center = document.querySelector(".center");
     let index = randomRange(0, 141); //starts function with a random color in the array
 
     //resets index if array max is reached
@@ -95,7 +96,7 @@ function background () {
         if (index > colorArray.length) {
             index = 0;
         }
-        third.innerHTML = colorArray[index];
+        
     }
     //advances background color array
     function color () {
@@ -103,6 +104,9 @@ function background () {
         body.style.backgroundColor = colorArray[index];
         index++;
         reset();
+        third.innerHTML = colorArray[index];
+        center.style.backgroundColor = colorArray[index];
+        
         
     }
     setInterval(function () { color() }, 5000); //automatically changes color every 5 seconds
@@ -132,6 +136,6 @@ function background () {
 //runs function after html document loads
 window.onload = function() {
 
-    background();
+    backgroundColors();
     bouncy();
 }
