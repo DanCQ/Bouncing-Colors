@@ -1,9 +1,10 @@
 # Bouncing-Colors
-Color changing functions, with a this-then-that sign. <br>
+This is a color comparison webapp. <br>
+It will have automated, and user selected, color changing functions. <br>
+It's meant to catch the eye, and inspire color combinations. <br>
 
 <a href="https://bouncing-colors.pages.dev/">Bouncing Colors</a>
 
-This is a color comparison site. <br>
 Further improvements to come.
 
 
