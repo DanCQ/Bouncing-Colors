@@ -63,10 +63,21 @@ button {
     bottom:-60px;
 }
 
-.lower-forward {
+.lower-forward-horizontal {
+    background-color:black;
+    height:5px;
+    right:25%;
+    width:30px;
     position:absolute;
-    right:0px;
-    bottom:0px;
+}
+
+.lower-forward-vertical {
+    background-color:black;
+    height:5px;
+    right:25%;
+    width:30px;
+    position:absolute;
+    transform:rotate(90deg);
 }
 
 .lower-half {
@@ -77,27 +88,33 @@ button {
     z-index:1;
 }
 
-.lower-left {
+.lower-left { 
+    align-items: center;
     background-color: transparent;
-    position:absolute;
     bottom:0;
+    display:flex;
     left:0;
-    height:50%;
+    height:100%;
+    position:absolute;
     width:50%;
 }
 
 .lower-rewind {
+    background-color:black;
+    height:5px;
+    left:25%;
+    width:30px;
     position:absolute;
-    left:10px;
-    bottom:0;
 }
 
 .lower-right {
+    align-items: center;
     background-color: transparent;
-    position:absolute;
     bottom:0;
+    display:flex;
+    height:100%;
+    position:absolute;
     right:0;
-    height:50%;
     width:50%;
 }
 
@@ -122,10 +139,21 @@ main {
     top:-60px;
 }
 
-.upper-forward {
+.upper-forward-horizontal {
+    background-color:black;
+    height:5px;
+    right:25%;
+    width:30px;
     position:absolute;
-    right:0;
-    top:0;
+}
+
+.upper-forward-vertical {
+    background-color:black;
+    height:5px;
+    right:25%;
+    width:30px;
+    position:absolute;
+    transform:rotate(90deg);
 }
 
 .upper-half {
@@ -137,44 +165,50 @@ main {
 }
 
 .upper-left {
+    align-items: center;
     background-color: transparent;
+    display:flex;
+    left:0;
+    height:100%;
     position:absolute;
     top:0;
-    left:0;
-    height:50%;
     width:50%;
+    text-align: center;
 }
 
 .upper-rewind {
+    background-color:black;
+    height:5px;
+    left:25%;
+    width:30px;
     position:absolute;
-    left:0;
-    top:0;
 }
 
-.upper-right {
+.upper-right { 
+    align-items: center;
     background-color: transparent;
-    position: absolute;
-    top:0;
+    display:flex;
+    height:100%;
+    position: absolute; 
     right:0;
-    height:50%;
+    top:0;
     width:50%;
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
 
     .center {
-        min-width:225px;
-        min-height:200px;
+        min-width:300px;
     }
 
 }
 
-@media (max-width: 400px) {
+@media (max-width: 700px) {
 
     .center {
-        min-width:175px;
-        min-height:175px;
+        min-width:200px;
+        min-height:300px;
     }
 
     .contact {
