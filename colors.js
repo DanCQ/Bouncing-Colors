@@ -1,6 +1,7 @@
-let first = document.getElementById("first");
-let second = document.getElementById("second");
-let third = document.getElementById("third");
+let center = document.querySelector(".center");
+let lower = document.getElementById("lower");
+let middle = document.getElementById("middle");
+let upper = document.getElementById("upper");
 
 // 141 colors
 const colorArray = [
@@ -10,14 +11,15 @@ const colorArray = [
     "darkblue", "darkcyan", "darkgoldenrod", "darkgray", "darkgreen", "darkkhaki", "darkmagenta", 
     "darkolivegreen", "darkorange", "darkorchid", "darkred", "darksalmon", "darkseagreen", "darkslateblue", 
     "darkslategray", "darkturquoise", "darkviolet", "deeppink", "deepskyblue", "dimgray", "dodgerblue",
-    "firebrick", "floralwhite", "forestgreen", "fuchsia", "gainsboro", "ghostwhite", "gold", "goldenrod", 
-    "gray", "green", "greenyellow", "honeydew", "hotpink", "indianred", "indigo", "ivory", "khaki",
+    "firebrick", "floralwhite", "forestgreen", "fuchsia", 
+    "gainsboro", "ghostwhite", "gold", "goldenrod", "gray", "green", "greenyellow", 
+    "honeydew", "hotpink", "indianred", "indigo", "ivory", "khaki",
     "lavender", "lavenderblush", "lawngreen", "lemonchiffon", "lightblue", "lightcoral", "lightcyan", 
     "lightgoldenrodyellow", "lightgray", "lightgreen", "lightpink", "lightsalmon", "lightseagreen",
     "lightskyblue", "lightslategray", "lightsteelblue", "lightyellow", "lime", "limegreen", "linen", 
     "magenta", "maroon", "mediumaquamarine", "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen",
     "mediumslateblue", "mediumspringgreen", "mediumturquoise", "mediumvioletred", "midnightblue", 
-    "mintcream", "mistyrose", "moccasin","navajowhite", "navy", 
+    "mintcream", "mistyrose", "moccasin", "navajowhite", "navy", 
     "oldlace", "olive", "olivedrab", "orange", "orangered", "orchid", 
     "palegoldenrod", "palegreen", "paleturquoise", "palevioletred", "papayawhip", "peachpuff", "peru", 
     "pink", "plum", "powderblue", "purple", "rebeccapurple", "red", "rosybrown", "royalblue", 
@@ -43,12 +45,13 @@ function flashingWords() {
 
     //resets index if array max is reached
     function reset () {
-        if (index > colorArray.length) {
+        if (index >= colorArray.length) {
             index = 0;
         }
     }
 
     function on(name) {
+        center.style.backgroundColor = colorArray[index];
         name.style.color = colorArray[index];
         name.style.textShadow = "3px 3px 3px #6a287e";
         index++;
@@ -60,57 +63,76 @@ function flashingWords() {
         name.style.textShadow = "";
     }
 
+/*
+    let play = setInterval(
+        function() {
+            flashColors() 
+    }, 6000); //runs funtion every 6 seconds
+
+    center.onclick = function() {
+
+        if (middle.innerHTML == "pause") {
+            clearInterval(play);
+            middle.innerHTML = "play";
+
+        } else if (middle.innerHTML == "play") {
+            flashColors();
+            middle.innerHTML = "pause";
+            play = setInterval(function () { flashColors() }, 6000);
+        }
+    }
+*/
 
     function flashColors() {
-        on(first); //starts
-        setTimeout(function(){ 
-            off(first);
-        }, 500); //stops
+        on(upper); //starts
+        setTimeout(function() { 
+            off(upper);
+        }, 2000); //stops
 
-        setTimeout(function(){
-            on(second);
-            setTimeout(function(){
-                off(second);
-            }, 500); //stops
-        }, 1000); //starts
+        setTimeout(function() {
+            on(middle);
+            setTimeout(function() {
+                off(middle);
+            }, 2000); //stops
+        }, 2000); //starts
 
-        setTimeout(function(){
-            on(third);
-            setTimeout(function(){
-                off(third);
-            },1000); //stops
-        }, 1500); //starts
+        setTimeout(function() {
+            on(lower);
+            setTimeout(function() {
+                off(lower);
+            },2000); //stops
+        }, 4000); //starts
     }
-
-    setInterval(flashColors, 2500); //runs funtion every 2.5 seconds
+    flashColors();
+    play = setInterval(flashColors, 6000); //runs funtion every 6 seconds
 }
 
 
 //cycle background color
 function backgroundColors () {
     
-    let body = document.querySelector(".main");
-    let center = document.querySelector(".center");
     let index = randomRange(0, 141); //starts function with a random color in the array
+    let lowerHalf = document.querySelector(".lower-half");
+    let upperHalf = document.querySelector(".upper-half");
 
     let play = setInterval( 
         function () { 
             color() 
     }, 5000); //automatically changes color every 5 seconds
 
-    setTimeout(function() { second.innerHTML = "pause" }, 5000); 
 
-    
     //advances background color array
     function color () {
-        first.innerHTML = colorArray[index];
-        body.style.backgroundColor = colorArray[index];
+        upper.innerHTML = colorArray[index];
+        upperHalf.style.backgroundColor = colorArray[index];
+
         index++;
         reset();
 
-        third.innerHTML = colorArray[index];
-        center.style.backgroundColor = colorArray[index];
+        lower.innerHTML = colorArray[index];
+        lowerHalf.style.backgroundColor = colorArray[index];
     }
+    color();
     
     //resets index if array max is reached ( >= prevents undefined from being displayed )
     function reset () {
@@ -119,16 +141,15 @@ function backgroundColors () {
         }
     }
 
+    center.onclick = function() {
 
-    second.onclick = function() {
-
-        if (second.innerHTML == "pause") {
+        if (middle.innerHTML == "pause") {
             clearInterval(play);
-            second.innerHTML = "play";
+            middle.innerHTML = "play";
 
-        } else if (second.innerHTML == "play") {
+        } else if (middle.innerHTML == "play") {
             color();
-            second.innerHTML = "pause";
+            middle.innerHTML = "pause";
             play = setInterval(function () { color() }, 5000);
         }
     }
