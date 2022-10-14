@@ -8,23 +8,28 @@ body {
     width:100%
 }
 
+button {
+    border:none;
+    background-color: transparent;
+    font-size: larger;
+    margin: 20% 30%;
+    padding:5px 25px;
+}
+
 .center {
     align-items: center;
-    background-color:white;
-    border-bottom: 0;
+    background-color:ivory;
     border-color: #151b54;
     border-radius: 15px;
     border-style: solid;
     box-shadow: 0px 0px 3px 3px #250517;
     color: black;
     display:flex;
-    font-family: "herculanum", "papyrus", "marker felt", "comic sans ms";
-    font-size: 30px;
-    font-weight:bolder;
     justify-content: center;
-    min-height:300px;
-    min-width: 450px;
+    min-height:200px;
+    min-width: 400px;
     position:absolute;
+    z-index:2;
 }
 
 .center:hover {
@@ -50,52 +55,123 @@ body {
     text-shadow: 0px 0px 2px lightsteelblue;
 }
 
-#first {
+#lower {
     position:absolute;
-    top:45px;
-    left:45px;
+    bottom:-60px;
+}
+
+.lower-forward {
+    position:absolute;
+    right:0px;
+    bottom:0px;
+}
+
+.lower-half {
+    bottom:0;
+    height:50%;
+    position:absolute;
+    width:100%;
+    z-index:1;
+}
+
+.lower-left {
+    background-color: transparent;
+    position:absolute;
+    bottom:0;
+    left:0;
+    height:50%;
+    width:50%;
+}
+
+.lower-rewind {
+    position:absolute;
+    left:10px;
+    bottom:0;
+}
+
+.lower-right {
+    background-color: transparent;
+    position:absolute;
+    bottom:0;
+    right:0;
+    height:50%;
+    width:50%;
 }
 
 main {
     align-items:center;
-    background-color:black;
+    background-color:white;
     min-height:100vh;
     min-width:100vw;
     display:flex;
     justify-content:center;
+    font-family: "herculanum", "papyrus", "marker felt", "comic sans ms";
+    font-size: 30px;
+    font-weight:bolder;
 }
 
-#second {
+#middle {
     position:absolute;
 }
 
-#third {
+#upper {
     position:absolute;
-    bottom:45px;
-    right:45px
+    top:-60px;
+}
+
+.upper-forward {
+    position:absolute;
+    right:0;
+    top:0;
+}
+
+.upper-half {
+    top:0;
+    height:50%;
+    position:absolute;
+    width:100%;
+    z-index:1;
+}
+
+.upper-left {
+    background-color: transparent;
+    position:absolute;
+    top:0;
+    left:0;
+    height:50%;
+    width:50%;
+}
+
+.upper-rewind {
+    position:absolute;
+    left:0;
+    top:0;
+}
+
+.upper-right {
+    background-color: transparent;
+    position: absolute;
+    top:0;
+    right:0;
+    height:50%;
+    width:50%;
 }
 
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
 
     .center {
-        min-width:365px;
-        min-height:250px;
+        min-width:225px;
+        min-height:200px;
     }
 
-    #first {
-        position:absolute;
-        top:15%;
-        left:auto
+}
+
+@media (max-width: 400px) {
+
+    .center {
+        min-width:175px;
+        min-height:175px;
     }
-    
-    #second {
-        position:absolute;
-    }
-    
-    #third {
-        position:absolute;
-        bottom:15%;
-        right:auto;
-    }
+
 }
