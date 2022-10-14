@@ -40,9 +40,12 @@ button {
 }
 
 .contact {
+    bottom:0;
     font-family: "zapfino", "luminari", "Academy Engraved Let";
+    font-size:large;
+    font-weight:normal;
     position:absolute;
-    bottom:25px;
+    z-index:1;
 }
 
 .contact a {
@@ -172,6 +175,10 @@ main {
     .center {
         min-width:175px;
         min-height:175px;
+    }
+
+    .contact {
+        font-size:small;
     }
 
 }
