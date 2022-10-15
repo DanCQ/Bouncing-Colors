@@ -8,21 +8,13 @@ body {
     width:100%
 }
 
-button {
-    border:none;
-    background-color: transparent;
-    font-size: larger;
-    margin: 20% 30%;
-    padding:5px 25px;
-}
-
 .center {
     align-items: center;
     background-color:ivory;
     border-color: #151b54;
     border-radius: 15px;
     border-style: solid;
-    box-shadow: 0px 0px 3px 3px #250517;
+    box-shadow: 0px 0px 2px 2px #250517;
     color: black;
     display:flex;
     justify-content: center;
@@ -34,7 +26,7 @@ button {
 
 .center:hover {
     border-color: #2b3856;
-    box-shadow: 0px 0px 5px 5px #7e587e;
+    box-shadow: 0px 0px 3.5px 3.5px #7e587e;
     color: white;
     text-shadow: 3px 3px 3px #6a287e;
 }
@@ -58,7 +50,7 @@ button {
     text-shadow: 0px 0px 2px lightsteelblue;
 }
 
-#lower {
+.lower {
     position:absolute;
     bottom:-60px;
 }
@@ -130,11 +122,11 @@ main {
     font-weight:bolder;
 }
 
-#middle {
+.middle {
     position:absolute;
 }
 
-#upper {
+.upper {
     position:absolute;
     top:-60px;
 }
