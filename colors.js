@@ -149,7 +149,6 @@ function backgroundColors () {
         if(j == -1) {
             j = 140;
         }
-
         lower.innerHTML = colorArray[j];
         lowerHalf.style.backgroundColor = colorArray[j];
     }
@@ -162,7 +161,6 @@ function backgroundColors () {
         if(j == 141) {
             j = 0;
         }
-
         lower.innerHTML = colorArray[j];
         lowerHalf.style.backgroundColor = colorArray[j];
     }
@@ -175,7 +173,6 @@ function backgroundColors () {
         if(i == -1) {
             i = 140;
         }
-
         upper.innerHTML = colorArray[i];
         upperHalf.style.backgroundColor = colorArray[i];
     }
@@ -188,13 +185,12 @@ function backgroundColors () {
         if(i == 141) {
             i = 0;
         }
-
         upper.innerHTML = colorArray[i];
         upperHalf.style.backgroundColor = colorArray[i];
     }
 
-
 }
+
 
 //runs function after html document loads
 window.onload = function() {
