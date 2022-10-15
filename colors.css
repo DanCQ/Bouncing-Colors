@@ -191,6 +191,7 @@ main {
 @media (max-width: 1000px) {
 
     .center {
+        min-height:175px;
         min-width:300px;
     }
 
@@ -199,12 +200,20 @@ main {
 @media (max-width: 700px) {
 
     .center {
-        min-width:200px;
+        min-width:175px;
         min-height:300px;
     }
 
     .contact {
         font-size:small;
+    }
+
+    .lower {
+        bottom:-80px;
+    }
+
+    .upper {
+        top:-80px;
     }
 
 }
