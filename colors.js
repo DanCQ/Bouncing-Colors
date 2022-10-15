@@ -1,9 +1,9 @@
-let center = document.querySelector(".center");
-let lower = document.getElementById("lower");
-let middle = document.getElementById("middle");
-let upper = document.getElementById("upper");
+const center = document.querySelector(".center");
+const lower = document.querySelector(".lower");
+const middle = document.querySelector(".middle");
+const upper = document.querySelector(".upper"); 
 
-// 141 colors
+//141 colors counting 0, so the minimum is 0, the maximum is 140
 const colorArray = [
     "aliceblue", "antiquewhite", "aqua", "aquamarine", "azure", 
     "beige", "bisque", "black", "blanchedalmond", "blue", "blueviolet", "brown", "burlywood", 
@@ -41,7 +41,7 @@ function randomRange(min, max) {
 //flashes color for words in sequential order
 function flashingWords() {
 
-    let index = randomRange(0, 141); //starts function with a random color in the array
+    let index = randomRange(0, 140); //starts function with a random color in the array
 
     //resets index if array max is reached
     function reset () {
@@ -111,7 +111,7 @@ function flashingWords() {
 //cycle background color
 function backgroundColors () {
     
-    let index = randomRange(0, 141); //starts function with a random color in the array
+    let index = randomRange(0, 140); //starts function with a random color in the array
     let lowerHalf = document.querySelector(".lower-half");
     let upperHalf = document.querySelector(".upper-half");
 
