@@ -209,11 +209,11 @@ main {
     }
 
     .lower {
-        bottom:-80px;
+        bottom:-100px;
     }
 
     .upper {
-        top:-80px;
+        top:-100px;
     }
 
 }
