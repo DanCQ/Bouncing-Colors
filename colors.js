@@ -95,6 +95,8 @@ function backgroundColors () {
     let j = randomRange(0, 140); //starts function with a random color in the array
     let lowerHalf = document.querySelector(".lower-half");
     let upperHalf = document.querySelector(".upper-half");
+    let heavyBoop = new Audio("assets/heavy_boop.mp3");
+    let lightBoop = new Audio("assets/light_boop.mp3");
 
     let lowerLeft = document.querySelector(".lower-left");
     let lowerRight = document.querySelector(".lower-right");
@@ -130,6 +132,8 @@ function backgroundColors () {
 
     center.onclick = function() {
 
+        heavyBoop.play();
+
         if (middle.innerHTML == "pause") {
             clearInterval(play);
             middle.innerHTML = "play";
@@ -144,6 +148,7 @@ function backgroundColors () {
     lowerLeft.onclick = function() {
         clearInterval(play);
         middle.innerHTML = "play";
+        lightBoop.play();
 
         j--;
         if(j == -1) {
@@ -156,6 +161,7 @@ function backgroundColors () {
     lowerRight.onclick = function() {
         clearInterval(play);
         middle.innerHTML = "play";
+        lightBoop.play();
 
         j++;
         if(j == 141) {
@@ -168,6 +174,7 @@ function backgroundColors () {
     upperLeft.onclick = function() {
         clearInterval(play);
         middle.innerHTML = "play";
+        lightBoop.play();
 
         i--;
         if(i == -1) {
@@ -180,6 +187,7 @@ function backgroundColors () {
     upperRight.onclick = function() {
         clearInterval(play);
         middle.innerHTML = "play";
+        lightBoop.play();
 
         i++;
         if(i == 141) {
