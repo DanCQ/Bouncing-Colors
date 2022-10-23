@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: bouncing-colors.pages.dev
-Token: a594ab8a8c03394d0597cfad3a430c0f7b1dcf24c283f18c26a86e21916d0586
