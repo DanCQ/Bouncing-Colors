@@ -40,8 +40,8 @@ function randomRange(min, max) {
 
 //flashes color for words in sequential order
 function flashingWords() {
-
-    let index = randomRange(0, 140); //starts function with a random color in the array
+    //starts function with a random color in the array
+    let index = randomRange(0, colorArray.length - 1); //if array size increases there's no problem with max#
 
     //resets index if array max is reached
     function reset () {
@@ -91,8 +91,8 @@ function flashingWords() {
 //cycle background color
 function backgroundColors () {
     
-    let i = randomRange(0, 140); //starts function with a random color in the array
-    let j = randomRange(0, 140); //starts function with a random color in the array
+    let i = randomRange(0, colorArray.length - 1); //starts function with a random color in the array
+    let j = randomRange(0, colorArray.length - 1); //if array size increases there's no problem with max#
     let lowerHalf = document.querySelector(".lower-half");
     let upperHalf = document.querySelector(".upper-half");
     let heavyBoop = new Audio("assets/heavy_boop.mp3");
@@ -108,24 +108,25 @@ function backgroundColors () {
 
     //advances background color array
     function color () {
+        
+        i++; //placement here prevents a double click to see visible change on the minus button
+        j++; //placement here prevents a double click to see visible change on the minus button
+        reset(); //placement here prevents undefined value from display
+        
         upper.innerHTML = colorArray[i];
         upperHalf.style.backgroundColor = colorArray[i];
-        i++;
-
+        
         lower.innerHTML = colorArray[j];
         lowerHalf.style.backgroundColor = colorArray[j];
-        j++;
-        
-        reset();
     }
     color();
     
-    //resets index if array max is reached ( >= prevents undefined from being displayed )
+    //resets index if array max is reached colorArray.length - 1 prevents an undefined value
     function reset () {
-        if (i >= colorArray.length) {
+        if (i > colorArray.length - 1) {
             i = 0;
         }
-        if (j >= colorArray.length) {
+        if (j > colorArray.length - 1) {
             j = 0;
         }
     }
@@ -145,14 +146,15 @@ function backgroundColors () {
         }
     }
 
-    lowerLeft.onclick = function() {
+    lowerLeft.onclick = function() { 
+
         clearInterval(play);
         middle.innerHTML = "play";
         lightBoop.play();
 
         j--;
         if(j == -1) {
-            j = 140;
+            j = colorArray.length - 1; //if array size increases there's no problem
         }
         lower.innerHTML = colorArray[j];
         lowerHalf.style.backgroundColor = colorArray[j];
@@ -164,7 +166,7 @@ function backgroundColors () {
         lightBoop.play();
 
         j++;
-        if(j == 141) {
+        if(j == colorArray.length) { //if array size increases there's no problem
             j = 0;
         }
         lower.innerHTML = colorArray[j];
@@ -172,13 +174,14 @@ function backgroundColors () {
     }
 
     upperLeft.onclick = function() {
+        
         clearInterval(play);
         middle.innerHTML = "play";
         lightBoop.play();
 
         i--;
         if(i == -1) {
-            i = 140;
+            i = colorArray.length - 1; //if array size increases there's no problem
         }
         upper.innerHTML = colorArray[i];
         upperHalf.style.backgroundColor = colorArray[i];
@@ -190,7 +193,7 @@ function backgroundColors () {
         lightBoop.play();
 
         i++;
-        if(i == 141) {
+        if(i == colorArray.length) { //if array size increases there's no problem
             i = 0;
         }
         upper.innerHTML = colorArray[i];
