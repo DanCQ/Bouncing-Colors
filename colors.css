@@ -57,6 +57,7 @@ body {
 
 .lower-forward-horizontal {
     background-color:black;
+    border-radius: 10px;
     height:5px;
     right:25%;
     width:30px;
@@ -65,6 +66,7 @@ body {
 
 .lower-forward-vertical {
     background-color:black;
+    border-radius: 10px;
     height:5px;
     right:25%;
     width:30px;
@@ -93,6 +95,7 @@ body {
 
 .lower-rewind {
     background-color:black;
+    border-radius: 10px;
     height:5px;
     left:25%;
     width:30px;
@@ -133,6 +136,7 @@ main {
 
 .upper-forward-horizontal {
     background-color:black;
+    border-radius: 10px;
     height:5px;
     right:25%;
     width:30px;
@@ -141,6 +145,7 @@ main {
 
 .upper-forward-vertical {
     background-color:black;
+    border-radius: 10px;
     height:5px;
     right:25%;
     width:30px;
@@ -170,6 +175,7 @@ main {
 
 .upper-rewind {
     background-color:black;
+    border-radius: 10px;
     height:5px;
     left:25%;
     width:30px;
