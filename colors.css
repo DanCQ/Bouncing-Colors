@@ -2,6 +2,7 @@
 
 body {
     background-color:black;
+    cursor: pointer;
     height:100%;
     margin:0;
     overflow:hidden;
